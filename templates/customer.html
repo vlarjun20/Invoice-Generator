@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Invoice Fetch</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='customer.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Fetch Invoice</h2>
+        <form action="/fetch_invoice" method="POST">
+            <label for="identifier">Enter Bill No or Phone No:</label>
+            <input type="text" id="identifier" name="identifier" required>
+            <button type="submit">Fetch Invoice</button>
+        </form>
+        {% if invoice %}
+        <h3>Invoice Details</h3>
+        <table class="invoice-table">
+            <tr>
+                <th>Bill No</th>
+                <th>Customer Name</th>
+                <th>Date & Time</th>
+                <th>Download PDF</th>
+            </tr>
+            <tr>
+                <td>{{ invoice.bill_no }}</td>
+                <td>{{ invoice.customer_name }}</td>
+                <td>{{ invoice.date_time }}</td>
+                <td><a href="{{ invoice.pdf_url }}" download>Download PDF</a></td>
+            </tr>
+        </table>
+        {% elif error %}
+        <p style="color: red;">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

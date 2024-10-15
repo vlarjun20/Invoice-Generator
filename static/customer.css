@@ -1,0 +1,105 @@
+/* Reset some default styles */
+body, h1, h2, p, table {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set font and general styles */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+    color: #333;
+    padding: 20px;
+    height: 100vh;
+}
+
+h1, h2 {
+    color: #0056b3;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+/* Container for the page content */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Form styling */
+form {
+    margin-bottom: 20px;
+}
+
+input[type="text"], input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #004494;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #0056b3;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Styling for the download link */
+a.download-link {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a.download-link:hover {
+    text-decoration: underline;
+}
+
+/* Styling for the no results message */
+.no-results {
+    color: #d9534f;
+    font-size: 1.1em;
+    text-align: center;
+    margin-top: 20px;
+}

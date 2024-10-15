@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+  </head>
+  <body>
+    <h4>Invoice Generator</h4>
+    <section>
+      <div class="container">
+        <div class="flex justify-center">
+          <div class="card">
+            <img src="static/Images/customer.jpg" alt="customer">
+            <a href="{{ url_for('customer') }}">
+              <button>Customer</button>
+            </a>
+          </div>
+          <div class="card">
+            <img src="static/Images/clerk.png" alt="cashier" style="width:100%;">
+            <a href="{{ url_for('cashier') }}">
+              <button>Cashier</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

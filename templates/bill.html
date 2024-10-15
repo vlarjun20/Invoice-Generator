@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bill.css') }}">
+</head>
+<body>
+    <div class="invoice-container">
+        <h1>Invoice Generator</h1>
+        <div class="customer-details">
+            <h2>Customer Details</h2>
+            <label for="customerName">Name:</label>
+            <input type="text" id="customerName" placeholder="Customer Name">
+            <label for="customerEmail">Mobile number</label>
+            <input type="tel" id="customerEmail" placeholder="Mobile number">
+        </div>
+        <div class="billing-items">
+            <h2>Billing Items</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item Description</th>
+                        <th>Quantity</th>
+                        <th>Unit Price</th>
+                        <th>Total</th>
+                        <th>Actions</th>  <!-- New Column for Cancel Button -->
+                    </tr>
+                </thead>
+                <tbody id="billingItemsTable">
+                    <tr>
+                        <td><input type="text" class="item-description" placeholder="Item Description"></td>
+                        <td><input type="number" class="item-quantity" value="1"></td>
+                        <td><input type="number" class="item-price" value="0.00"></td>
+                        <td class="item-total">0.00</td>
+                        <td><button class="cancelItemButton">Cancel</button></td>  <!-- Cancel Button -->
+                    </tr>
+                </tbody>
+            </table>
+            <button id="addItemButton">Add Item</button>
+        </div>
+        <div class="total-section">
+            <h2>Total Amount: <span id="totalAmount">0.00</span></h2>
+        </div>
+        <button id="generateInvoiceButton">Generate Invoice</button>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
